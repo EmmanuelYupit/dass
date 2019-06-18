@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BlogHeader from "../components/blogheader"
 import Image from "../components/image"
+import CodeBlock from "../components/codeblock"
 
 const subjects = [
   {
@@ -95,26 +96,6 @@ const TextMining = () => (
                   de la Universidad del Caribe.
                 </p>
                 <hr />
-                {/* <p>
-                  Cum sociis natoque penatibus et magnis{" "}
-                  <a href="#">dis parturient montes</a>, nascetur ridiculus mus.
-                  Aenean eu leo quam. Pellentesque ornare sem lacinia quam
-                  venenatis vestibulum. Sed posuere consectetur est at lobortis.
-                  Cras mattis consectetur purus sit amet fermentum.
-                </p>
-                <blockquote>
-                  <p>
-                    Curabitur blandit tempus porttitor.{" "}
-                    <strong>Nullam quis risus eget urna mollis</strong> ornare
-                    vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id
-                    elit.
-                  </p>
-                </blockquote>
-                <p>
-                  Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras
-                  mattis consectetur purus sit amet fermentum. Aenean lacinia
-                  bibendum nulla sed consectetur.
-                </p> */}
                 <h3>Extracción</h3>
                 <p>
                   Para este primer paso utilizamos la función <i>list.files</i>{" "}
@@ -122,20 +103,16 @@ const TextMining = () => (
                   de las carpetas.
                 </p>
                 <p>Le indicamos la carpeta en la que queremos que busque.</p>
-                <pre>
-                  <code>path &lt;- "Primer Ciclo"</code>
-                </pre>
+                <CodeBlock code='path &lt;- "Primer Ciclo"' />
                 <p>
                   Guardamos en una variable el listado de nombres de los
                   archivos con extensión pdf, para ello utilizamos el parámetro
                   pattern
                 </p>
-                <pre>
-                  <code>
-                    files &lt;- list.files(path = paste0("./Temarios IDeIO
-                    finales/", path) , pattern = "pdf$")
-                  </code>
-                </pre>
+                <CodeBlock
+                  code='files &lt;- list.files(path = paste0("./Temarios IDeIO
+                    finales/", path) , pattern = "pdf$")'
+                />
                 <p>
                   Si imprimimos el resultado podemos notar que se encuentran
                   todos los archivos del primer ciclo.
@@ -161,24 +138,20 @@ const TextMining = () => (
                     </tbody>
                   </Table>
                 </pre>
-                <pre>
-                  <code>
-                    corp &lt;- VCorpus(URISource(files), readerControl =
-                    list(reader = readPDF))
-                  </code>
-                </pre>
+                <CodeBlock
+                  code="corp &lt;- VCorpus(URISource(files), readerControl =
+                    list(reader = readPDF))"
+                />
                 <p>
                   Hicimos uso de la función <b>VCorpus</b> de la librería{" "}
                   <i>tm</i> para generar el corpus con los archivos. Utilizamos
                   la opción readPDF como parámetro para poder leer los archivos
                   pdf.
                 </p>
-                <pre>
-                  <code>
-                    corp &lt;- VCorpus(URISource(files), readerControl =
-                    list(reader = readPDF))
-                  </code>
-                </pre>
+                <CodeBlock
+                  code="corp &lt;- VCorpus(URISource(files), readerControl =
+                    list(reader = readPDF))"
+                />
                 <code>
                   &lt;&lt;VCorpus&gt;&gt; Metadata: corpus specific: 0, document
                   level (indexed): 0 Content: documents: 16
@@ -186,7 +159,61 @@ const TextMining = () => (
                 <br />
                 <h3>Limpieza</h3>
                 <p>Funcion para la limpieza de datos:</p>
+                <p>
+                  Utilizamos la función tm_map para mapear el corpus y remover
+                  las stopwords en español y en inglés dado que tratamos con
+                  archivos en ambos idiomas.
+                </p>
+                <CodeBlock code='tm_map(corp, removeWords, c(stopwords("es"), stopwords("en")))' />
+                <p>
+                  Al momento de construir la matriz documento termino, le
+                  pasamos a la funcion como parametro de control una lista de
+                  funciones para la limpieza de datos, tales como:
+                </p>
+                <ul>
+                  <li>
+                    <i>removePunctuation:</i> Eliminar los signos de puntuación
+                    de un documento de texto.
+                  </li>
+                  <li>
+                    <i>tolower:</i> Convierte el texto a minúsculas.
+                  </li>
+                  <li>
+                    <i>stemming:</i> Reduce las palabras inflexionadas (o
+                    algunas veces derivadas) a su forma de raíz.
+                  </li>
+                  <li>
+                    <i>removeNumbers:</i> Elimina los numeros de un documentos
+                    de texto.
+                  </li>
+                  <li>
+                    <i>bounds:</i> Los términos que aparecen en menos documentos
+                    que los límites del límite inferior o en más documentos que
+                    los límites del límite superior se descartan.
+                  </li>
+                </ul>
+                <h5>Palabras mas buscadas por ciclo</h5>
+                <p>Funcion countWords:</p>
+                <p>
+                  <b>Input</b>
+                </p>
+                <ul>
+                  <li>
+                    <i>path:</i> Indica la ruta (ciclo) del cual quiere que
+                    cuente las palabras.
+                  </li>
+                </ul>
+                <p>
+                  <b>Output:</b>
+                </p>
+                <ul>
+                  <li>Total de numero de palabras por ciclo.</li>
+                </ul>
               </div>
+              <p>Ejemplo:</p>
+              <CodeBlock code=' path <- "Primer Ciclo"' />
+              <CodeBlock code=" countWords(path)" />
+              <code>7330</code>
             </Col>
           </Row>
         </Container>
