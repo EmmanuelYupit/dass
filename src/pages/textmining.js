@@ -1,10 +1,76 @@
 import React, { Fragment } from "react"
-import { Link } from "gatsby"
-import { Container, Row, Col } from "reactstrap"
+import { Container, Row, Col, Table } from "reactstrap"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BlogHeader from "../components/blogheader"
+
+const subjects = [
+  {
+    key: "ID0101",
+    name: "Diseño de patrones para datos estructurados.pdf",
+  },
+  {
+    key: "ID0102",
+    name: "Física clásica.pdf",
+  },
+  {
+    key: "ID0103",
+    name: "Organización y diseño de computadoras.pdf",
+  },
+  {
+    key: "ID0160",
+    name: "Pensamiento crítico para ingeniería.pdf",
+  },
+  {
+    key: "ID0161",
+    name: "Recursos de comunicación para la era digital.pdf",
+  },
+  {
+    key: "II0106",
+    name: "Cálculo diferencial.pdf",
+  },
+  {
+    key: "II0209",
+    name: "Cálculo integral.pdf",
+  },
+  {
+    key: "IL0102",
+    name: "Teoría general de sistemas.pdf",
+  },
+  {
+    key: "IT0101",
+    name: "Algoritmos y estructura de datos.pdf",
+  },
+  {
+    key: "IT0103",
+    name: "Introducción a las redes.pdf",
+  },
+  {
+    key: "IT0104",
+    name: "Matemáticas discretas.pdf",
+  },
+  {
+    key: "IT0161",
+    name: "Sistemas operativos POSIX.pdf",
+  },
+  {
+    key: "IT0264",
+    name: "Introducción a los sistemas de información.pdf",
+  },
+  {
+    key: "LI1101",
+    name: "Nivel 1 Inglés.pdf",
+  },
+  {
+    key: "LI1102",
+    name: "Nivel 2 Inglés.pdf",
+  },
+  {
+    key: "LI1103",
+    name: "Nivel 3 Inglés.pdf",
+  },
+]
 
 const TextMining = () => (
   <Layout>
@@ -21,7 +87,6 @@ const TextMining = () => (
               <div class="blog-post">
                 {/* <h2 class="blog-post-title">Sample blog post</h2> */}
                 <p class="blog-post-meta">Junio 3, 2019</p>
-
                 <p>
                   En el presente artículo presentaremos la serie de pasos que
                   seguimos para poder aplicar minería de textos en unos archivos
@@ -29,7 +94,7 @@ const TextMining = () => (
                   de la Universidad del Caribe.
                 </p>
                 <hr />
-                <p>
+                {/* <p>
                   Cum sociis natoque penatibus et magnis{" "}
                   <a href="#">dis parturient montes</a>, nascetur ridiculus mus.
                   Aenean eu leo quam. Pellentesque ornare sem lacinia quam
@@ -48,63 +113,59 @@ const TextMining = () => (
                   Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras
                   mattis consectetur purus sit amet fermentum. Aenean lacinia
                   bibendum nulla sed consectetur.
-                </p>
-                <h2>Heading</h2>
+                </p> */}
+                <h3>Extracción</h3>
                 <p>
-                  Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-                  auctor. Duis mollis, est non commodo luctus, nisi erat
-                  porttitor ligula, eget lacinia odio sem nec elit. Morbi leo
-                  risus, porta ac consectetur ac, vestibulum at eros.
+                  Para este primer paso utilizamos la función <i>list.files</i>{" "}
+                  de R para listar todos los archivos con extensión pdf dentro
+                  de las carpetas.
                 </p>
-                <h3>Sub-heading</h3>
-                <p>
-                  Cum sociis natoque penatibus et magnis dis parturient montes,
-                  nascetur ridiculus mus.
-                </p>
+                <p>Le indicamos la carpeta en la que queremos que busque.</p>
                 <pre>
-                  <code>path = "Primer Ciclo"</code>
+                  <code>path &lt;- "Primer Ciclo"</code>
                 </pre>
                 <p>
-                  Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem
-                  malesuada magna mollis euismod. Fusce dapibus, tellus ac
-                  cursus commodo, tortor mauris condimentum nibh, ut fermentum
-                  massa.
+                  Guardamos en una variable el listado de nombres de los
+                  archivos con extensión pdf, para ello utilizamos el parámetro
+                  pattern
                 </p>
-                <h3>Sub-heading</h3>
+                <pre>
+                  <code>
+                    files &lt;- list.files(path = paste0("./Temarios IDeIO
+                    finales/", path) , pattern = "pdf$")
+                  </code>
+                </pre>
                 <p>
-                  Cum sociis natoque penatibus et magnis dis parturient montes,
-                  nascetur ridiculus mus. Aenean lacinia bibendum nulla sed
-                  consectetur. Etiam porta sem malesuada magna mollis euismod.
-                  Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                  condimentum nibh, ut fermentum massa justo sit amet risus.
+                  Si imprimimos el resultado podemos notar que se encuentran
+                  todos los archivos del primer ciclo.
                 </p>
-                <ul>
-                  <li>
-                    Praesent commodo cursus magna, vel scelerisque nisl
-                    consectetur et.
-                  </li>
-                  <li>Donec id elit non mi porta gravida at eget metus.</li>
-                  <li>Nulla vitae elit libero, a pharetra augue.</li>
-                </ul>
-                <p>
-                  Donec ullamcorper nulla non metus auctor fringilla. Nulla
-                  vitae elit libero, a pharetra augue.
-                </p>
-                <ol>
-                  <li>Vestibulum id ligula porta felis euismod semper.</li>
-                  <li>
-                    Cum sociis natoque penatibus et magnis dis parturient
-                    montes, nascetur ridiculus mus.
-                  </li>
-                  <li>
-                    Maecenas sed diam eget risus varius blandit sit amet non
-                    magna.
-                  </li>
-                </ol>
-                <p>
-                  Cras mattis consectetur purus sit amet fermentum. Sed posuere
-                  consectetur est at lobortis.
-                </p>
+                <pre>
+                  <code>&gt; files</code>
+                  <Table striped bordered size="sm">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Clave</th>
+                        <th>Nombre</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {subjects.map(({ key, name }, index) => (
+                        <tr>
+                          <th scope="row">{index + 1}</th>
+                          <td>{key}</td>
+                          <td>{name}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </Table>
+                </pre>
+                <pre>
+                  <code>
+                    corp &lt;- VCorpus(URISource(files), readerControl =
+                    list(reader = readPDF))
+                  </code>
+                </pre>
               </div>
             </Col>
           </Row>
