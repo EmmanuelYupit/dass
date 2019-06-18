@@ -4,6 +4,7 @@ import { Container, Row, Col, Table } from "reactstrap"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BlogHeader from "../components/blogheader"
+import Image from "../components/image"
 
 const subjects = [
   {
@@ -79,12 +80,12 @@ const TextMining = () => (
         <BlogHeader />
         <Container>
           <Row>
-            <Col md="12" class="blog-main">
-              <h3 class="pb-3 mb-4 font-italic border-bottom text-center">
+            <Col md="12" className="blog-main">
+              <h3 className="pb-3 mb-4 font-italic border-bottom text-center">
                 Minería de Textos
               </h3>
 
-              <div class="blog-post">
+              <div className="blog-post">
                 {/* <h2 class="blog-post-title">Sample blog post</h2> */}
                 <p class="blog-post-meta">Junio 3, 2019</p>
                 <p>
@@ -166,6 +167,25 @@ const TextMining = () => (
                     list(reader = readPDF))
                   </code>
                 </pre>
+                <p>
+                  Hicimos uso de la función <b>VCorpus</b> de la librería{" "}
+                  <i>tm</i> para generar el corpus con los archivos. Utilizamos
+                  la opción readPDF como parámetro para poder leer los archivos
+                  pdf.
+                </p>
+                <pre>
+                  <code>
+                    corp &lt;- VCorpus(URISource(files), readerControl =
+                    list(reader = readPDF))
+                  </code>
+                </pre>
+                <code>
+                  &lt;&lt;VCorpus&gt;&gt; Metadata: corpus specific: 0, document
+                  level (indexed): 0 Content: documents: 16
+                </code>
+                <br />
+                <h3>Limpieza</h3>
+                <p>Funcion para la limpieza de datos:</p>
               </div>
             </Col>
           </Row>
