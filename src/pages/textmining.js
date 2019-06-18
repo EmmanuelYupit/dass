@@ -13,21 +13,20 @@ const TextMining = () => (
         <BlogHeader />
         <Container>
           <Row>
-            <div class="col-md-8 blog-main">
-              <h3 class="pb-3 mb-4 font-italic border-bottom">
-                From the Firehose
+            <Col md="12" class="blog-main">
+              <h3 class="pb-3 mb-4 font-italic border-bottom text-center">
+                Minería de Textos
               </h3>
 
               <div class="blog-post">
-                <h2 class="blog-post-title">Sample blog post</h2>
-                <p class="blog-post-meta">
-                  January 1, 2014 by <a href="#">Mark</a>
-                </p>
+                {/* <h2 class="blog-post-title">Sample blog post</h2> */}
+                <p class="blog-post-meta">Junio 3, 2019</p>
 
                 <p>
-                  This blog post shows a few different types of content that's
-                  supported and styled with Bootstrap. Basic typography, images,
-                  and code are all supported.
+                  En el presente artículo presentaremos la serie de pasos que
+                  seguimos para poder aplicar minería de textos en unos archivos
+                  PDF correspondientes al plan edicativo de la carrera de IDeIO
+                  de la Universidad del Caribe.
                 </p>
                 <hr />
                 <p>
@@ -63,7 +62,7 @@ const TextMining = () => (
                   nascetur ridiculus mus.
                 </p>
                 <pre>
-                  <code>Example code block</code>
+                  <code>path = "Primer Ciclo"</code>
                 </pre>
                 <p>
                   Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem
@@ -107,7 +106,7 @@ const TextMining = () => (
                   consectetur est at lobortis.
                 </p>
               </div>
-            </div>
+            </Col>
           </Row>
         </Container>
       </Fragment>
