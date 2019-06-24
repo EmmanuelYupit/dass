@@ -7,6 +7,39 @@ import BlogHeader from "../components/blogheader"
 import Image from "../components/image"
 import CodeBlock from "../components/codeblock"
 
+const libraries = [
+  {
+    name: "Rgdal",
+    description:
+      "Permite tener acceso a los enlaces a GDAL (Geospatial Data Abstraction Library), para este proyecto se usa  para leer un archivo .shp que nos permitirá dibujar el mapa de Quintana Roo.",
+  },
+  {
+    name: "Spdplyr",
+    description:
+      "Nos permite manipular data frames y hacer operaciones con ellos.",
+  },
+  {
+    name: "Readxl",
+    description: "Nos permite manipular documentos excel",
+  },
+  {
+    name: "Tmap",
+    description: "Esta librería nos permite mostrar los mapas",
+  },
+]
+
+const mostUsedWords = [
+  "actividad",
+  "asignatura",
+  "dato",
+  "docente",
+  "edicion",
+  "informacion",
+  "ingenieria",
+  "objetivo",
+  "problema",
+  "sistema",
+]
 const subjects = [
   {
     key: "ID0101",
@@ -214,6 +247,61 @@ const TextMining = () => (
               <CodeBlock code=' path <- "Primer Ciclo"' />
               <CodeBlock code=" countWords(path)" />
               <code>7330</code>
+              <h5>Palabras mas usadas por ciclo</h5>
+              <p>Funcion tenMostUsedWords:</p>
+              <CodeBlock code=' path <- "Primer Ciclo"' />
+              <CodeBlock code=" tenMostUsedWords(path)" />
+              <pre>
+                <Table striped bordered size="sm">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Termino</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {mostUsedWords.map((term, index) => (
+                      <tr>
+                        <th scope="row">{index + 1}</th>
+                        <td>{term}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </Table>
+              </pre>
+              <h5>Palabras unicas por ciclo</h5>
+              <p>Funcion uniqueWords:</p>
+              <h3>Mapa de Quintana Roo</h3>
+              <p>Librerias necesarias:</p>
+              <ul>
+                {libraries.map(({ name, description }) => (
+                  <li>
+                    {name}:{description}
+                  </li>
+                ))}
+              </ul>
+              <p>Cargamos librerías necesarias para trabajar</p>
+              <CodeBlock code="packages <- c('rgdal', 'spdplyr', 'readxl', 'tmap')" />
+              <CodeBlock code="lapply(packages, library, character.only=T)" />
+              <p>
+                Descargamos el archivo necesario para mostrar el mapa de
+                Quintana Roo (Versión 2012)
+              </p>
+              <CodeBlock code='url<-"http://www.conabio.gob.mx/informacion/gis/maps/geo/muni_2012gw.zip"' />
+              <CodeBlock
+                code='
+if(!file.exists("muni_2012gw.zip")){
+download.file(url, "muni_2012gw.zip")
+}
+if(!file.exists("Muni_2012gw.shp")){
+unzip("muni_2012gw.zip")
+}
+                '
+              />
+              <p>Leemos el conjunto de datos</p>
+              <CodeBlock code='mx_map <- readOGR("Muni_2012gw.shp", layer="Muni_2012gw", verbose = FALSE)' />
+              <p>Ploteamos el mapa</p>
+              <CodeBlock code="plot(mx_map)" />
             </Col>
           </Row>
         </Container>

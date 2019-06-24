@@ -1,8 +1,14 @@
 import React from "react"
+import styled from "styled-components"
+
+const Code = styled.code`
+  display: block;
+  white-space: pre-wrap;
+`
 
 const CodeBlock = ({ code }) => (
   <pre>
-    <code>{code}</code>
+    <Code>{code}</Code>
   </pre>
 )
 
