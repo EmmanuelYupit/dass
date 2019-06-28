@@ -5,6 +5,9 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.19",
+    "@fortawesome/free-solid-svg-icons": "^5.9.0",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "babel-plugin-styled-components": "^1.10.1",
     "bootstrap": "4.0.0-beta.2",
     "gatsby": "^2.9.4",
@@ -21,6 +24,7 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "reactstrap": "^8.0.0",
+    "sharp": "^0.22.1",
     "styled-components": "^4.3.1"
   },
   "devDependencies": {

@@ -1,17 +1,13 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Alert, Container, Col, Row } from "reactstrap"
-import styled from "styled-components"
-
+import { Container, Col, Row } from "reactstrap"
+import { TeamContainer } from "../layout/index.style"
 import Layout from "../components/layout"
-import Image from "../components/image"
+// import Image from "../components/image"
 import TeamCard from "../components/teamcard"
 import SEO from "../components/seo"
-
-const TeamContainer = styled.section`
-  margin-top: "20px";
-  margin-bottom: "20px";
-`
+import Services from "../containers/Services"
+import Callout from "../containers/Callout"
 
 const team = [
   {
@@ -46,6 +42,8 @@ const IndexPage = () => (
         </Row>
       </Container>
     </TeamContainer>
+    <Services />
+    <Callout />
     <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )
