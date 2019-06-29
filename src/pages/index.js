@@ -4,10 +4,12 @@ import { Container, Col, Row } from "reactstrap"
 import { TeamContainer } from "../layout/index.style"
 import Layout from "../components/layout"
 // import Image from "../components/image"
+
 import TeamCard from "../components/teamcard"
 import SEO from "../components/seo"
 import Services from "../containers/Services"
 import Callout from "../containers/Callout"
+import Portfolio from "../containers/Portfolio"
 
 const team = [
   {
@@ -44,6 +46,7 @@ const IndexPage = () => (
     </TeamContainer>
     <Services />
     <Callout />
+    <Portfolio />
     <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )
