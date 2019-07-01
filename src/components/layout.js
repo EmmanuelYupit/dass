@@ -29,7 +29,12 @@ const Layout = ({ children }) => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
         <main>{children}</main>
-        <footer className="text-center">
+        <footer
+          className="text-center"
+          style={{
+            background: "#393E44",
+          }}
+        >
           <Container>
             <ul className="list-inline mb-5">
               <li className="list-inline-item">
@@ -55,7 +60,7 @@ const Layout = ({ children }) => (
               </li>
             </ul>
           </Container>
-          <p class="text-muted small mb-0">
+          <p class="text-white small mb-0">
             Copyright &copy; Data Analysis and Software Solutions{" "}
             {new Date().getFullYear()}
           </p>

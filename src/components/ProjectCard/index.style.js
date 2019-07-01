@@ -6,6 +6,7 @@ export const GatbsbyLink = styled(Link)`
   position: relative;
   overflow: hidden;
   max-width: 530px;
+  max-height: 345px;
   margin: auto auto 1rem;
 `
 export const Caption = styled.span`

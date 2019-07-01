@@ -1,4 +1,9 @@
 import styled from "styled-components"
+import { Navbar } from "reactstrap"
+
+export const NavbarReactstrap = styled(Navbar)`
+  background: #393e44;
+`
 
 export const TeamContainer = styled.section`
   margin-top: "20px";
@@ -46,5 +51,5 @@ export const Image = styled.img`
   width: 10%;
 `
 export const NavbarContainer = styled.div`
-  background: #393d46;
+  background: #393e44;
 `

@@ -35,11 +35,15 @@ const projects = [
 ]
 
 const Portfolio = () => (
-  <ContentSection>
+  <ContentSection
+    style={{
+      background: "#393E44",
+    }}
+  >
     <Container>
       <ContentSectionHeading className="text-center">
-        <h3 className="text-secundary mb-0">Portfolio</h3>
-        <h2>Proyectos recientes</h2>
+        <h3 className="text-secondary mb-0">Portfolio</h3>
+        <h2 className="text-white">Proyectos recientes</h2>
       </ContentSectionHeading>
       <Row className="no-gutters">
         {projects.map(project => (

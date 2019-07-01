@@ -47,7 +47,7 @@ const IndexPage = () => (
       </Container>
     </TeamContainer> */}
     <Services />
-    <Callout />
+    {/* <Callout /> */}
     <Portfolio />
   </Layout>
 )
