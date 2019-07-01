@@ -8,6 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
+import { Container } from "reactstrap"
 
 import Header from "./header"
 import "./layout.css"
@@ -28,10 +29,36 @@ const Layout = ({ children }) => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+        <footer className="text-center">
+          <Container>
+            <ul className="list-inline mb-5">
+              <li className="list-inline-item">
+                <a
+                  className="social-link rounded-circle text-white mr-3"
+                  href="#"
+                >
+                  <i className="icon-social-facebook"></i>
+                </a>
+              </li>
+              <li className="list-inline-item">
+                <a
+                  className="social-link rounded-circle text-white mr-3"
+                  href="#"
+                >
+                  <i className="icon-social-twitter"></i>
+                </a>
+              </li>
+              <li className="list-inline-item">
+                <a className="social-link rounded-circle text-white" href="#">
+                  <i className="icon-social-github"></i>
+                </a>
+              </li>
+            </ul>
+          </Container>
+          <p class="text-muted small mb-0">
+            Copyright &copy; Data Analysis and Software Solutions{" "}
+            {new Date().getFullYear()}
+          </p>
         </footer>
       </>
     )}

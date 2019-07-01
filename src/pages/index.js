@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import { Container, Col, Row } from "reactstrap"
 import { TeamContainer } from "../layout/index.style"
 import Layout from "../components/layout"
+import Particles from "../containers/ParticlesContainer"
 // import Image from "../components/image"
 
 import TeamCard from "../components/teamcard"
@@ -27,7 +28,8 @@ const team = [
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <TeamContainer>
+    <Particles />
+    {/* <TeamContainer>
       <Container>
         <Row>
           <Col>
@@ -43,11 +45,10 @@ const IndexPage = () => (
           </Col>
         </Row>
       </Container>
-    </TeamContainer>
+    </TeamContainer> */}
     <Services />
     <Callout />
     <Portfolio />
-    <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )
 

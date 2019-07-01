@@ -13,6 +13,8 @@ import {
   DropdownMenu,
   DropdownItem,
 } from "reactstrap"
+import logo from "../images/logo.png"
+import { Image, NavbarContainer } from "../layout/index.style"
 
 export default class CustomNavbar extends React.Component {
   constructor(props) {
@@ -30,25 +32,27 @@ export default class CustomNavbar extends React.Component {
   }
   render() {
     return (
-      <div>
-        <Navbar color="light" light expand="md">
-          <NavbarBrand>DASS</NavbarBrand>
+      <NavbarContainer>
+        <Navbar dark expand="md">
+          <NavbarBrand>
+            <Image src={logo} />
+          </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
+            <Nav light className="ml-auto" navbar>
               <NavItem>
                 <Link to="/">
                   <NavLink>home</NavLink>
                 </Link>
               </NavItem>
-              <NavItem>
+              {/* <NavItem>
                 <Link to="/about">
                   <NavLink>acerca de</NavLink>
                 </Link>
-              </NavItem>
+              </NavItem> */}
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
-                  servicios
+                  proyectos
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem>
@@ -66,7 +70,7 @@ export default class CustomNavbar extends React.Component {
             </Nav>
           </Collapse>
         </Navbar>
-      </div>
+      </NavbarContainer>
     )
   }
 }
