@@ -4,10 +4,26 @@ import { ContentSection, ContentSectionHeading } from "./index.style"
 import { Container, Row } from "reactstrap"
 
 const servicesArr = [
-  { name: "Data", description: "Looks great on any screen size!" },
-  { name: "Analysis", description: "Freshly redesigned for Bootstrap 4" },
-  { name: "Software", description: "Millions of users" },
-  { name: "Solutions", description: "I mustache you a question..." },
+  {
+    name: "Data",
+    description: "Looks great on any screen size!",
+    iconName: "faDatabase",
+  },
+  {
+    name: "Analysis",
+    description: "Freshly redesigned for Bootstrap 4",
+    iconName: "faChartLine",
+  },
+  {
+    name: "Software",
+    description: "Millions of users",
+    iconName: "faLaptopCode",
+  },
+  {
+    name: "Solutions",
+    description: "I mustache you a question...",
+    iconName: "faCoffee",
+  },
 ]
 
 const Services = () => (

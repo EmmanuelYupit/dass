@@ -52,7 +52,7 @@ export default class CustomNavbar extends React.Component {
               </NavItem> */}
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav>proyectos</DropdownToggle>
-              <DropdownMenu right>
+              <DropdownMenu className="bg-dark" right>
                 <DropdownItem>
                   <Link to="/textmining">
                     <NavLink>semana 1</NavLink>
