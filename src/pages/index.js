@@ -11,6 +11,7 @@ import SEO from "../components/seo"
 import Services from "../containers/Services"
 import Callout from "../containers/Callout"
 import Portfolio from "../containers/Portfolio"
+import Team from "../containers/Team"
 
 const team = [
   {
@@ -29,24 +30,9 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <Particles />
-    {/* <TeamContainer>
-      <Container>
-        <Row>
-          <Col>
-            <Container>
-              <Row>
-                {team.map(member => (
-                  <Col>
-                    <TeamCard member={member} />
-                  </Col>
-                ))}
-              </Row>
-            </Container>
-          </Col>
-        </Row>
-      </Container>
-    </TeamContainer> */}
+
     <Services />
+    <Team />
     {/* <Callout /> */}
     <Portfolio />
   </Layout>

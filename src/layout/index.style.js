@@ -13,7 +13,7 @@ export const TeamContainer = styled.section`
 export const ContentSection = styled.section`
   padding-top: 7.5rem;
   padding-bottom: 7.5rem;
-  background: #393e44 !import;
+  background: #393e44 !important;
 `
 
 export const ContentSectionHeading = styled.div`
