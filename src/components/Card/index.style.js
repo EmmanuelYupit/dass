@@ -10,7 +10,6 @@ export const User = styled.div`
 
 export const ContentUser = styled.div`
   text-align: center;
-
   strong {
     font-style: italic;
   }

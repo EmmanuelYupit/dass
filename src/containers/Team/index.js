@@ -1,7 +1,19 @@
 import React from "react"
-import { ContentSection, ContentSectionHeading } from "./index.style"
-import { Container, Row, Col } from "reactstrap"
-import Card from "../../components/Card"
+import { ContentSection, ContentSectionHeading, Subtitle } from "./index.style"
+import {
+  Container,
+  Row,
+  Col,
+  Card,
+  CardImg,
+  CardText,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
+} from "reactstrap"
+import yup from "../../images/yup.jpg"
+import shamed from "../../images/shamed.jpg"
+// import Card from "../../components/Card"
 
 const Team = () => (
   <ContentSection
@@ -15,11 +27,31 @@ const Team = () => (
         <h2 className="mb-5 text-white">Conoce al Team</h2>
       </ContentSectionHeading>
       <Row className="text-center ">
-        <Col md="6" className="text-center">
-          <Card />
+        <Col xs="6" className="text-center">
+          <Card>
+            <CardImg top width="100%" src={yup} alt="Card image cap" />
+            <CardBody>
+              <CardTitle>Emmanuel Yupit</CardTitle>
+              <Subtitle>CEO & Co-Founder</Subtitle>
+              <CardText>
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </CardText>
+            </CardBody>
+          </Card>
         </Col>
-        <Col md="6" className="text-center">
-          <Card />
+        <Col xs="6" className="text-center">
+          <Card>
+            <CardImg top width="100%" src={shamed} alt="Card image cap" />
+            <CardBody>
+              <CardTitle>Shamed Calderon</CardTitle>
+              <Subtitle>CTO & Co-Founder</Subtitle>
+              <CardText>
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </CardText>
+            </CardBody>
+          </Card>
         </Col>
       </Row>
     </Container>
