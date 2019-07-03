@@ -4,8 +4,9 @@ import { Container, Row, Col, Table } from "reactstrap"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BlogHeader from "../components/blogheader"
-import Image from "../components/image"
 import CodeBlock from "../components/codeblock"
+import mapaMexico from "../images/mapa-mexico.png"
+import mapaQRoo from "../images/qroo.png"
 
 const libraries = [
   {
@@ -302,6 +303,55 @@ unzip("muni_2012gw.zip")
               <CodeBlock code='mx_map <- readOGR("Muni_2012gw.shp", layer="Muni_2012gw", verbose = FALSE)' />
               <p>Ploteamos el mapa</p>
               <CodeBlock code="plot(mx_map)" />
+              <img width="50%" src={mapaMexico} />
+              <p>
+                Aplicamos filtros para poder tomar unicamente el mapa de
+                Quintana Roo
+              </p>
+              <CodeBlock
+                code="
+filter(mx_map@data, CVE_ENT == 23)
+qroo_mun <- filter(mx_map, CVE_ENT == 23)
+qroo_mun@data    
+              "
+              />
+              <p>
+                Asignamos colores para diferenciar los municipios y ploteamos el
+                mapa
+              </p>
+              <CodeBlock
+                code="
+colors=rainbow(length(qroo_mun$NOM_MUN))
+plot(qroo_mun, col = colors)
+text(coordinates(qroo_mun), labels = qroo_mun$NOM_MUN)              
+              "
+              />
+              <img src={mapaQRoo} width="50%" />
+              <p>
+                Tomamos las variables con las que queremos trabajar, en este
+                caso <strong>conyugal</strong>, <strong>censo familiar</strong>{" "}
+                y <strong>salud</strong>
+              </p>
+              <CodeBlock
+                code='
+filenames_list <- list.files(path = "municipios", full.names = TRUE)
+
+data_conyugal <- lapply(filenames_list, function(filename){
+print(paste("Merging", filename, sep=" "))
+read_excel(filename, sheet = 9)
+})
+
+data_censal <- lapply(filenames_list, function(filename){
+print(paste("Merging", filename, sep=" "))
+read_excel(filename, sheet = 11)
+})
+
+data_salud <- lapply(filenames_list, function(filename){
+print(paste("Merging", filename, sep=" "))
+read_excel(filename, sheet = 8)
+})              
+              '
+              />
             </Col>
           </Row>
         </Container>

@@ -11,25 +11,25 @@ const projects = [
   {
     url: "/textmining",
     caption: "Mineria de Textos",
-    description: "Uso de herramientas para la mineria de textos",
+    description: "Procesamiento de textos en formato PDF",
     imageUrl: textMiningImage,
   },
   {
     url: "/imageprocessing",
     caption: "procesamiento de imagenes",
-    description: "Uso de herramientas para la mineria de textos",
+    description: "Procesamiento y clasificacion de mamografias",
     imageUrl: imageprocessingImage,
   },
   {
     url: "/audioprocessing",
     caption: "procesamiento de audio",
-    description: "Uso de herramientas para la mineria de textos",
+    description: "Procesamiento de audio utilizando Pydub & IPython",
     imageUrl: audioProcessingImage,
   },
   {
     url: "/videoprocessing",
     caption: "procesamiento de video",
-    description: "Uso de herramientas para la mineria de textos",
+    description: "Procesamiento de video utilizando OpenCV",
     imageUrl: videoProcessingImage,
   },
 ]
