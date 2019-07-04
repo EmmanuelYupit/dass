@@ -16,6 +16,13 @@ import {
 import logo from "../images/logo.png"
 import { Image, NavbarReactstrap } from "../layout/index.style"
 
+const projects = [
+  { name: "semana 1", url: "/textmining" },
+  { name: "semana 2", url: "/imageprocessing" },
+  { name: "semana 3", url: "/audioprocessing" },
+  { name: "semana 4", url: "/videoprocessing" },
+]
+
 export default class CustomNavbar extends React.Component {
   constructor(props) {
     super(props)
@@ -32,7 +39,6 @@ export default class CustomNavbar extends React.Component {
   }
   render() {
     return (
-      // <NavbarContainer>
       <NavbarReactstrap dark expand="md" sticky="top">
         <NavbarBrand dark>
           <Image src={logo} />
@@ -45,30 +51,21 @@ export default class CustomNavbar extends React.Component {
                 <NavLink>home</NavLink>
               </Link>
             </NavItem>
-            {/* <NavItem>
-                <Link to="/about">
-                  <NavLink>acerca de</NavLink>
-                </Link>
-              </NavItem> */}
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav>proyectos</DropdownToggle>
               <DropdownMenu className="bg-dark" right>
-                <DropdownItem>
-                  <Link to="/textmining">
-                    <NavLink>semana 1</NavLink>
-                  </Link>
-                </DropdownItem>
-                <DropdownItem>
-                  <Link to="/imageprocessing">
-                    <NavLink>semana 2</NavLink>
-                  </Link>
-                </DropdownItem>
+                {projects.map(({ name, url }) => (
+                  <DropdownItem>
+                    <Link to={url}>
+                      <NavLink>{name}</NavLink>
+                    </Link>
+                  </DropdownItem>
+                ))}
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>
         </Collapse>
       </NavbarReactstrap>
-      // </NavbarContainer>
     )
   }
 }

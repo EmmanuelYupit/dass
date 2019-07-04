@@ -30,10 +30,8 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <Particles />
-
     <Services />
     <Team />
-    {/* <Callout /> */}
     <Portfolio />
   </Layout>
 )

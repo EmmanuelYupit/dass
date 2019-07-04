@@ -112,7 +112,7 @@ const TextMining = () => (
   <Layout>
     <Container>
       <Fragment>
-        <BlogHeader />
+        <BlogHeader imgSrc={mapaQRoo} />
         <Container>
           <Row>
             <Col md="12" className="blog-main">
@@ -121,7 +121,6 @@ const TextMining = () => (
               </h3>
 
               <div className="blog-post">
-                {/* <h2 class="blog-post-title">Sample blog post</h2> */}
                 <p class="blog-post-meta">Junio 3, 2019</p>
                 <p>
                   En el presente artículo presentaremos la serie de pasos que
