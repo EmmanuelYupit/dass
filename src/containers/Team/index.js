@@ -34,8 +34,8 @@ const Team = () => (
               <CardTitle>Emmanuel Yupit</CardTitle>
               <Subtitle>CEO & Co-Founder</Subtitle>
               <CardText>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                Full-Stack experto en React.Js, con una trayectoria de 4 años
+                como desarrollador de software.
               </CardText>
             </CardBody>
           </Card>
@@ -47,8 +47,8 @@ const Team = () => (
               <CardTitle>Shamed Calderon</CardTitle>
               <Subtitle>CTO & Co-Founder</Subtitle>
               <CardText>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                Front-End Developer experto en Angular.Js, con una trayectoria
+                de 2 años como desarrollador de software.
               </CardText>
             </CardBody>
           </Card>

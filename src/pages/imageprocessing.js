@@ -8,13 +8,14 @@ import CodeBlock from "../components/codeblock"
 import mammogramInfo from "../images/mammogram-info.png"
 import mammogram1 from "../images/mammogram-1.png"
 import mammogram2 from "../images/mammogram-2.png"
+import headerImg from "../images/portfolio-2.jpg"
 
 const SecondPage = () => (
   <Layout>
     <SEO title="Image Processing Mammographs" />
     <Container>
       <Fragment>
-        <BlogHeader />
+        <BlogHeader imgSrc={headerImg} />
         <Container>
           <Row>
             <Col md="12" className="blog-main"></Col>

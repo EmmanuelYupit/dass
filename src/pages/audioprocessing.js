@@ -5,13 +5,14 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BlogHeader from "../components/blogheader"
 import CodeBlock from "../components/codeblock"
+import headerImg from "../images/portfolio-3.jpg"
 
 const SecondPage = () => (
   <Layout>
     <SEO title="Audio Processing" />
     <Container>
       <Fragment>
-        <BlogHeader />
+        <BlogHeader imgSrc={headerImg} />
         <Container>
           <Row>
             <Col md="12" className="blog-main"></Col>
