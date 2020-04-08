@@ -20,7 +20,7 @@ const team = [
     description: "Software Engineer especializado en react",
   },
   {
-    name: "Shamed Calderon",
+    name: "Shamed Calderon Diaz",
     position: "CTO",
     description: "Data Engineer especializado en Angular",
   },
